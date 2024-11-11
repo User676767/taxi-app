@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 public class DriverController {
     private final DriverService driverService;
 
+    public DriverController(DriverService driverService) {
+        this.driverService = driverService;
+    }
+
     @GetMapping("/id/{id}")
     public Driver getDriverById(@PathVariable Long id) {
         Driver driver = driverService.getDriverById(id);
