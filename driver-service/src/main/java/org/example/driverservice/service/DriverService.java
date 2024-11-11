@@ -9,6 +9,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DriverService {
     private final DriverRepository driverRepository;
+
+    public DriverService(DriverRepository driverRepository) {
+        this.driverRepository = driverRepository;
+
+    }
+
     public Driver getDriverById(Long id) {
         return driverRepository.findById(id).orElse(null);
     }
